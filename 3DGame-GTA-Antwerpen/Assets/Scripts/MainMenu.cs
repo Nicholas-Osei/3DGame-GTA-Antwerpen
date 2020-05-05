@@ -3,11 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using System;
 
 public class MainMenu : MonoBehaviour {
 
 	public AudioMixer audioMixer;
-	public void PlayGame () {
+	public static bool Paused = false;
+    public GameObject pauseMenuUi;
+
+	void Start()
+	{
+		pauseMenuUi.SetActive(false);
+	}
+
+	public void Update()
+    {
+			if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				if (Paused)
+				{
+					Resume();
+				}
+				else
+				{
+					Pause();
+				}
+				Debug.Log("paused");
+			}
+       
+    }
+
+    private void Pause()
+    {
+		pauseMenuUi.SetActive(true);
+		Time.timeScale = 0f;
+		Paused = true;
+     }
+
+    public void Resume()
+    {
+		pauseMenuUi.SetActive(false);
+		Time.timeScale = 1f;
+		Paused = false;
+	}
+    public void LoadScene()
+    {
+		Time.timeScale = 1f;
+		SceneManager.LoadScene("Menu Scene");
+
+	}
+    public void PlayGame () {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
