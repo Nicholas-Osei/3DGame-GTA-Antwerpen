@@ -15,4 +15,4 @@ MonoBehaviour:
   m_ShowMaterialEditor: 0
   m_SelectedTerrainLayer: {fileID: 8574412962073106934, guid: 04ab0648ea4d28b4e9d0ec622943d1fb,
     type: 2}
-  m_ShowLayerEditor: 0
+  m_ShowLayerEditor: 1
