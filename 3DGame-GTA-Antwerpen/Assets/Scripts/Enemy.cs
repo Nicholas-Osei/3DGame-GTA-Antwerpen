@@ -9,7 +9,9 @@ public class Enemy : MonoBehaviour
     private Rigidbody rigidbody;
     public float InputX;
     public float InputY;
+    public float Kick;
     public float speed = 4f;
+    public float Position;
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +28,21 @@ public class Enemy : MonoBehaviour
     public void FixedUpdate()
     {
         Vector3 position = Vector3.MoveTowards(transform.position, Player.position, speed * Time.fixedDeltaTime);
-        animator.SetFloat("InputX", Player.position.x);
-        animator.SetFloat("InputY", Player.position.y);
+        Vector3 Direction = transform.position;
+
+        float close = (transform.position - Player.position).sqrMagnitude;
+        //Debug.Log(close);
+
+
+        //if (close <= 5)
+        //{
+        //    Debug.Log("i am close");
+        //    animator.SetFloat("InputY", Player.position.x);
+        //}
         rigidbody.MovePosition(position);
+        animator.SetFloat("InputX", Player.position.x);
+        animator.SetFloat("InputY", InputY);
         transform.LookAt(Player);
     }
 }
-   
+
