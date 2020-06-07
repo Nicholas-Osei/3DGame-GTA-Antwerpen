@@ -124,5 +124,10 @@ namespace Invector.vCharacterController
             else
                 animator.CrossFadeInFixedTime("JumpMove", .2f);
         }
+
+        public virtual void Shoot(bool Shoot )
+        {
+            animator.SetBool("Shooting", Shoot);
+        }
     }
 }
