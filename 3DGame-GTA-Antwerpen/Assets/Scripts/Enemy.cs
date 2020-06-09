@@ -35,11 +35,12 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("i am close");
             //animator.SetBool("IsKicking", true);
-            animator.SetBool("IsDying", true);
+            animator.SetBool("IsPunching", true);
         }
         else
         {
             animator.SetBool("IsPunching", false);
+            animator.SetBool("IsWalking", true);
         }
 
         animator.SetBool("IsWalking", true);
