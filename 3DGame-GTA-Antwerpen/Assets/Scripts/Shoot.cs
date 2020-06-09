@@ -12,11 +12,7 @@ public class Shoot : MonoBehaviour
     [Range(0.05f,1f)]
     public float FireRate = 1;
 
-    private KeyCode Mouse1 = KeyCode.Mouse0;
-
-
-    public GameObject[] ParticleExamples;
-    private int exampleIndex;
+    public GameObject ParticleExamples; 
 
     public bool orderedSpawns = true;
     public float step = 1.0f;
@@ -55,6 +51,7 @@ public class Shoot : MonoBehaviour
         
         
         Debug.DrawRay(firePoint.position, firePoint.forward * 300, Color.red, 2f);
+
         Ray ray = new Ray(firePoint.position, firePoint.forward);
         RaycastHit hitinfo;
         
@@ -66,10 +63,10 @@ public class Shoot : MonoBehaviour
 
     private GameObject spawnParticle()
     {
-        GameObject particles = (GameObject)Instantiate(ParticleExamples[exampleIndex]);
-        particles.transform.parent = ParticleExamples[exampleIndex].transform.parent;
-        particles.transform.localPosition = ParticleExamples[exampleIndex].transform.localPosition;
-        particles.transform.localRotation = ParticleExamples[exampleIndex].transform.localRotation;
+        GameObject particles = (GameObject)Instantiate(ParticleExamples);
+        particles.transform.parent = ParticleExamples.transform.parent;
+        particles.transform.localPosition = ParticleExamples.transform.localPosition;
+        particles.transform.localRotation = ParticleExamples.transform.localRotation;
 
         SetActiveCrossVersions(particles, true);
 
