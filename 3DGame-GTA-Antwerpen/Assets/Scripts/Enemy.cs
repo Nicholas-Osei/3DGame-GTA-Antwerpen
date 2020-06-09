@@ -40,7 +40,6 @@ public class Enemy : MonoBehaviour
         else
         {
             animator.SetBool("IsPunching", false);
-            animator.SetBool("IsWalking", true);
         }
 
         animator.SetBool("IsWalking", true);
