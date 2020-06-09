@@ -16008,7 +16008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &507314151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34956,8 +34956,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098148111}
-  m_LocalRotation: {x: 0.0013653819, y: 0.9818258, z: 0.18964756, w: -0.007068728}
-  m_LocalPosition: {x: -102.297966, y: -5.484706, z: 44.10097}
+  m_LocalRotation: {x: 0.13487707, y: 0.84071356, z: 0.24439248, w: -0.4639841}
+  m_LocalPosition: {x: -65.85633, y: -51.61352, z: 52.35467}
   m_LocalScale: {x: 0.19936617, y: 0.20158058, z: 0.68260217}
   m_Children: []
   m_Father: {fileID: 2077801282}
@@ -54510,7 +54510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 0}
-  pauseMenuUi: {fileID: 0}
+  pauseMenuUi: {fileID: 507314150}
 --- !u!114 &1789615121
 MonoBehaviour:
   m_ObjectHideFlags: 0
