@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.UIElements.GraphView;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 
@@ -10,7 +11,6 @@ public class EnterCar : MonoBehaviour
     public GameObject Player;
     public GameObject ExitTrigger;
     public GameObject Car;
-    private MiniMap miniMap = new MiniMap();
     public int TriggerCheck = 0;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,6 @@ public class EnterCar : MonoBehaviour
         switch (TriggerCheck)
         {
             case 1:
-                miniMap.FollowPlayer = false;
                 if (Input.GetButtonDown("Action"))
                 {
                     CarCam.SetActive(true);
@@ -34,9 +33,6 @@ public class EnterCar : MonoBehaviour
                     Car.GetComponent<CarUserControl>().enabled = true;
                     ExitTrigger.SetActive(true);
                 }
-                break;
-            case 0:
-                miniMap.FollowPlayer = true;
                 break;
         }
         
