@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 4425428723088313502}
   - component: {fileID: 4425428723088313497}
   - component: {fileID: 4425428723088313496}
+  - component: {fileID: 8896213322968790718}
   m_Layer: 0
   m_Name: ThirdPersonController_LITE
   m_TagString: Player
@@ -395,6 +396,7 @@ MonoBehaviour:
   jumpInput: 32
   strafeInput: 9
   sprintInput: 304
+  Mouse1: 323
   rotateCameraXInput: Mouse X
   rotateCameraYInput: Mouse Y
   cc: {fileID: 0}
@@ -430,6 +432,21 @@ CapsuleCollider:
   m_Height: 1.9
   m_Direction: 1
   m_Center: {x: 0, y: 0.95, z: 0}
+--- !u!114 &8896213322968790718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425428723088313499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea179084e5a01347af649f6a61ca841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 5
+  range: 100
+  FireRate: 0.5
 --- !u!1 &4425428723094576442
 GameObject:
   m_ObjectHideFlags: 0

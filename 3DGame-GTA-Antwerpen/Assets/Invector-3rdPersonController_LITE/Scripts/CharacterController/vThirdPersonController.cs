@@ -127,7 +127,7 @@ namespace Invector.vCharacterController
 
         public virtual void Shoot(bool Shoot )
         {
-            animator.SetBool("Shooting", Shoot);
+            animator.SetBool("Shooting", Shoot);    
         }
     }
 }
