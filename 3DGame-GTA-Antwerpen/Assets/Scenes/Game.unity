@@ -45461,6 +45461,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7589597298f0a734c97bacf7e919cbee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 1493214200}
+  fase: {fileID: 801715338}
+  faseNr: 1
+  timeStart: 10
 --- !u!1 &1500729425
 GameObject:
   m_ObjectHideFlags: 0

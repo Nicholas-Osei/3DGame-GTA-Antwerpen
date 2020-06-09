@@ -7,29 +7,28 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public Text timer;
+    public Text fase;
+    public int faseNr = 1;
+    public float timeStart = 10;
     private static System.Timers.Timer timer_t;
-    public int minute = 0, second1 = 0, second2 = 0;
     // Start is called before the first frame update
     void Start()
     {
         timer = GetComponent<Text>();
+        fase = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer_t = new System.Timers.Timer();
-        //timer.inter
-        second2--;
-        if (second2 == 0)
+        timeStart -= Time.deltaTime;
+        timer.text = Mathf.Round(timeStart).ToString();
+        if(timeStart < 0)
         {
-            second2 = 9;
-            second1--;
+            faseNr++;
+            timeStart = 10;
+            fase.text = "Fase " + faseNr;
         }
-        else if (second1 == 0)
-        {
-            second1 = 9;
-            minute--;
-        }
+        
     } 
 }
