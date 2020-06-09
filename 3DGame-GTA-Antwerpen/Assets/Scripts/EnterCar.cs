@@ -10,7 +10,8 @@ public class EnterCar : MonoBehaviour
     public GameObject Player;
     public GameObject ExitTrigger;
     public GameObject Car;
-    public int TriggerCheck;
+    private MiniMap miniMap = new MiniMap();
+    public int TriggerCheck = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class EnterCar : MonoBehaviour
         switch (TriggerCheck)
         {
             case 1:
+                miniMap.FollowPlayer = false;
                 if (Input.GetButtonDown("Action"))
                 {
                     CarCam.SetActive(true);
@@ -33,6 +35,9 @@ public class EnterCar : MonoBehaviour
                     ExitTrigger.SetActive(true);
                 }
                 break;
+            case 0:
+                miniMap.FollowPlayer = true;
+                break;
         }
         
     }
@@ -40,9 +45,11 @@ public class EnterCar : MonoBehaviour
     public void OnTriggerEnter(Collider collider)
     {
         TriggerCheck = 1;
+        System.Console.WriteLine("Trigger = 1");
     }
     public void OnTriggerExit(Collider collider)
     {
         TriggerCheck = 0;
+        System.Console.WriteLine("Trigger = 0");
     }
 }
