@@ -22,11 +22,14 @@ public class MainMenu : MonoBehaviour {
 			{
 				if (Paused)
 				{
-					Resume();
-				}
+                    
+                    Resume();
+                   
+                }
 				else
 				{
-					Pause();
+                    Cursor.lockState = CursorLockMode.None;
+                    Pause();
 				}
 				Debug.Log("paused");
 			}
@@ -45,7 +48,9 @@ public class MainMenu : MonoBehaviour {
 		pauseMenuUi.SetActive(false);
 		Time.timeScale = 1f;
 		Paused = false;
-	}
+
+        Aim.LockCroshair();
+    }
     public void LoadScene()
     {
 		Time.timeScale = 1f;

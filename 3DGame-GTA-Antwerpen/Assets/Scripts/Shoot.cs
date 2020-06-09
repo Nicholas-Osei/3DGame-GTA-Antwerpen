@@ -27,9 +27,22 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private AudioSource GunSound;
 
+    //LineDraw
+    private Camera thrirdCamera;
+    private WaitForSeconds Duration = new WaitForSeconds(0.9f);
+    public LineRenderer laserline;
+    private float nextFire;
+
 
     private float timer;
     public Transform firePoint;
+
+    private void Start()
+    {
+        laserline = GetComponent<LineRenderer>();
+        Cursor.lockState = CursorLockMode.Locked;
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -39,11 +52,9 @@ public class Shoot : MonoBehaviour
         {
             if (Input.GetButton("Fire1"))
             {
-                
                 timer = 0f;
                 FireGun();
             }
-            
         }
     }
 
@@ -52,16 +63,32 @@ public class Shoot : MonoBehaviour
         GameObject particle = spawnParticle();
         particle.transform.position = particle.transform.position;
         GunSound.Play();
+
+        Debug.DrawRay(firePoint.position, firePoint.forward * GunRange, Color.red, 2f);
+
+        nextFire = Time.time + FireRate;
         
-        
-        Debug.DrawRay(firePoint.position, firePoint.forward * 300, Color.red, 2f);
+
         Ray ray = new Ray(firePoint.position, firePoint.forward);
         RaycastHit hitinfo;
-        
-        if(Physics.Raycast(ray, out hitinfo, range))
+
+        //laserline.SetPosition(0, firePoint.position);
+        //ShotEffect();
+
+        if (Physics.Raycast(ray, out hitinfo, GunRange))
         {
+            //laserline.SetPosition(1, hitinfo.point);
             Destroy(hitinfo.collider.gameObject);
         }
+
+    }   
+
+    private IEnumerable ShotEffect()
+    {
+        laserline.enabled = true;
+        yield return Duration;
+        laserline.enabled = false;
+
     }
 
     private GameObject spawnParticle()
