@@ -29,13 +29,12 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             StartCoroutine(Die());
+            ScoreScript.scoreValue++;
         }
     }
     IEnumerator Die()
     {
         //gameObject.SetActive(false);
-        ScoreScript.scoreValue++;
-        Timer.killNr++;
         Animatie();
         yield return new WaitForSeconds(5.5f);
         //gameObject.SetActive(false);
