@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeroHealth : MonoBehaviour
 {
-    public float heroHealth = 100;
+    public float startHealth = 100;
     public float currentHealth;
     public HealthBar healthBar;
     // Start is called before the first frame update
@@ -19,8 +19,8 @@ public class HeroHealth : MonoBehaviour
     }
     private void OnEnable()
     {
-        currentHealth = heroHealth;
-        healthBar.SetMaxHealth(heroHealth);
+        currentHealth = startHealth;
+        healthBar.SetMaxHealth(startHealth);
     }
 
     public void TakeDamage(float damage)
