@@ -42,7 +42,8 @@ public class MainMenu : MonoBehaviour {
 
     public void Resume()
     {
-		pauseMenuUi.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        pauseMenuUi.SetActive(false);
 		Time.timeScale = 1f;
 		Paused = false;
 	}
@@ -54,7 +55,8 @@ public class MainMenu : MonoBehaviour {
 	}
     public void PlayGame () {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-	}
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
 	public void QuitGame()
 	{

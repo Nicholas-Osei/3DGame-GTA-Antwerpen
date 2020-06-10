@@ -8263,6 +8263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231944554}
   - component: {fileID: 231944553}
+  - component: {fileID: 231944555}
   m_Layer: 0
   m_Name: Water4AdvancedReflectionvThirdPersonCamera_LITE
   m_TagString: Untagged
@@ -8326,6 +8327,15 @@ Transform:
   m_Father: {fileID: 1334563123}
   m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &231944555
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231944552}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1001 &234708388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13749,8 +13759,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &422542724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18057,6 +18067,53 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.91, y: 1, z: 0.67}
   m_Center: {x: -0.11, y: 0.16, z: 0.12}
+--- !u!1 &559008071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559008073}
+  - component: {fileID: 559008072}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &559008072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559008071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe34e537b9939146a1efb7991ff7739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 422542718}
+  PositionX: 0
+  PostionZ: 0
+  AantalEnemies: 0
+--- !u!4 &559008073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559008071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 280.48, y: 1.36, z: 443.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &561222868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21011,8 +21068,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658435295}
-  m_LocalRotation: {x: 0.0063601034, y: 0.99360543, z: 0.083659895, w: -0.07555717}
-  m_LocalPosition: {x: -121.17133, y: -45.22494, z: 115.01534}
+  m_LocalRotation: {x: -0.00013979123, y: 0.9997152, z: 0.0059982017, w: 0.023098825}
+  m_LocalPosition: {x: -93.93492, y: -5.2342806, z: 47.877365}
   m_LocalScale: {x: 0.19936617, y: 0.20158058, z: 0.68260217}
   m_Children: []
   m_Father: {fileID: 2077801282}
@@ -46824,8 +46881,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531332453}
-  m_LocalRotation: {x: 0.0063601034, y: 0.99360543, z: 0.083659895, w: -0.07555717}
-  m_LocalPosition: {x: -114.0834, y: -24.95954, z: 80.134186}
+  m_LocalRotation: {x: 0.012466478, y: 0.8321746, z: 0.018728428, w: -0.5540571}
+  m_LocalPosition: {x: -84.11319, y: -3.860368, z: 43.361217}
   m_LocalScale: {x: 0.19936617, y: 0.20158058, z: 0.68260217}
   m_Children: []
   m_Father: {fileID: 2077801282}
@@ -52894,8 +52951,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692807143}
-  m_LocalRotation: {x: -0.019258453, y: 0.9752989, z: 0.19871828, w: 0.09451053}
-  m_LocalPosition: {x: -95.34955, y: -6.400849, z: 44.892048}
+  m_LocalRotation: {x: 0.030078093, y: 0.96671444, z: 0.21516153, w: -0.13514476}
+  m_LocalPosition: {x: -99.87157, y: -7.429626, z: 46.398994}
   m_LocalScale: {x: 0.19936617, y: 0.20158058, z: 0.68260217}
   m_Children: []
   m_Father: {fileID: 2077801282}
@@ -63043,6 +63100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2050438140}
   - component: {fileID: 2050438139}
+  - component: {fileID: 2050438141}
   m_Layer: 0
   m_Name: Water4Advanced (1)ReflectionvThirdPersonCamera_LITE
   m_TagString: Untagged
@@ -63106,6 +63164,15 @@ Transform:
   m_Father: {fileID: 1334563123}
   m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &2050438141
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050438138}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!4 &2051881401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 404200059227751606, guid: 786588e39ad89774ba7578fa88884546,
