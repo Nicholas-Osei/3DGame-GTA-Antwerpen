@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour {
 			{
 				if (Paused)
 				{
-                    Cursor.lockState = CursorLockMode.None;
+                    
                     Resume();
 				}
 				else
@@ -36,7 +36,8 @@ public class MainMenu : MonoBehaviour {
 
     private void Pause()
     {
-		pauseMenuUi.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        pauseMenuUi.SetActive(true);
 		Time.timeScale = 0f;
 		Paused = true;
      }
@@ -50,7 +51,8 @@ public class MainMenu : MonoBehaviour {
 	}
     public void LoadScene()
     {
-		Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1f;
 		SceneManager.LoadScene("Menu Scene");
 
 	}

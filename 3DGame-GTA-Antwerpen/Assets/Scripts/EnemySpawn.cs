@@ -6,17 +6,18 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject Enemy;
+    private int Aantal = 11;
 
     public int PositionX, PostionZ, AantalEnemies;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(EnemiesSpawning());
+        StartCoroutine(EnemiesSpawning(Aantal));
     }
 
-    IEnumerator   EnemiesSpawning()
+    public IEnumerator EnemiesSpawning(int aantal)
     {
-        while (AantalEnemies<10)
+        while (AantalEnemies < aantal)
         {
             PositionX = UnityEngine.Random.Range(-3,500);
             PostionZ = UnityEngine.Random.Range(1,600);
