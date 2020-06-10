@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public float Kick;
     public float speed = 4f;
     public float Position;
+    private bool death = false;
 
     public float heroHealth = 100;
     public float currentHealth;
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour
     }
     public void FixedUpdate()
     {
+        if (!death) {
         Vector3 position = Vector3.MoveTowards(transform.position, Player.position, speed * Time.fixedDeltaTime);
         Vector3 Direction = transform.position;
 
@@ -42,29 +44,36 @@ public class Enemy : MonoBehaviour
             Debug.Log("i am close");
             //animator.SetBool("IsKicking", true);
             animator.SetBool("IsPunching", true);
-     
+
         }
         else
         {
             animator.SetBool("IsPunching", false);
         }
-        if(animator.GetBool("IsPunching") == true)
+        if (animator.GetBool("IsPunching") == true)
         {
             TakeDamage(0.1f);
             Debug.Log("Take damage");
 
         }
 
-       
+
         animator.SetBool("IsWalking", true);
 
         rigidbody.MovePosition(position);
         transform.LookAt(Player);
+        }
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+    }
+
+    public void Death()
+    {
+        death = true;
+        animator.SetBool("Death", true);
     }
 }

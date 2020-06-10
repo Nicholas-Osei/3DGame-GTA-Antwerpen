@@ -6,10 +6,11 @@ public class EnemyHealth : MonoBehaviour
 {
     public float startingHealth = 6;
     private float currentHealth;
+    private Enemy enemy;
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemy = GetComponent<Enemy>();
     }
 
     // Update is called once per frame
@@ -27,12 +28,24 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
-    private void Die()
+    IEnumerator Die()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         ScoreScript.scoreValue++;
+        Animatie();
+        yield return new WaitForSeconds(3.5f);
+        gameObject.SetActive(false);
+
     }
+
+    public void Animatie()
+    {
+
+        enemy.Death();
+    }
+
+
 }
