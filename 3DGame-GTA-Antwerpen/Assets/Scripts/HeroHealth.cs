@@ -19,6 +19,8 @@ public class HeroHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
             Death();
+        else if (currentHealth > 100)
+            currentHealth = 100;
     }
     private void OnEnable()
     {
