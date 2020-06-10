@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
 
-    public float Damage = 5;
+    public float Damage = 1;
     public int GunRange = 100;
 
     [SerializeField]
@@ -19,6 +19,8 @@ public class Shoot : MonoBehaviour
     public float range = 5.0f;
     private float order = -5.0f;
     private string randomSpawnsDelay = "0.5";
+    public float enemyHealth = 100;
+    public float currentHealth;
 
     [SerializeField]
     private AudioSource GunSound;
@@ -43,6 +45,11 @@ public class Shoot : MonoBehaviour
         }
     }
 
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+    }
+
     void FireGun()
     {
         GameObject particle = spawnParticle();
@@ -57,7 +64,9 @@ public class Shoot : MonoBehaviour
         
         if(Physics.Raycast(ray, out hitinfo, range))
         {
-            Destroy(hitinfo.collider.gameObject);
+            var enHealth = hitinfo.collider.GetComponent<EnemyHealth>();
+            if (enHealth != null)
+                enHealth.TakeDamage(Damage);
         }
     }
 

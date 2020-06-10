@@ -14,9 +14,7 @@ namespace Invector.vCharacterController
         public KeyCode sprintInput = KeyCode.LeftShift;
         public KeyCode Mouse1 = KeyCode.Mouse0;
 
-        public int maxhealth = 100;
-        public int currentHealth;
-        public HealthBar healthBar;
+
 
         [Header("Camera Input")]
         public string rotateCameraXInput = "Mouse X";
@@ -26,14 +24,13 @@ namespace Invector.vCharacterController
         [HideInInspector] public vThirdPersonCamera tpCamera;
         [HideInInspector] public Camera cameraMain;
 
+
         #endregion
 
         protected virtual void Start()
         {
             InitilizeController();
             InitializeTpCamera();
-            currentHealth = maxhealth;
-            healthBar.SetMaxHealth(maxhealth);
             
         }
 
@@ -48,10 +45,6 @@ namespace Invector.vCharacterController
         {
             InputHandle();                  // update the input methods
             cc.UpdateAnimator();            // updates the Animator Parameters
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                TakeDamage(10);
-            }
             if (Input.GetKeyDown(KeyCode.S))
             {
                 ScoreScript.scoreValue++;
@@ -174,11 +167,9 @@ namespace Invector.vCharacterController
             }
         }
 
-        public void TakeDamage(int damage)
-        {
-            currentHealth -= damage;
-            healthBar.SetHealth(currentHealth);
-        }
+
+
+
 
         #endregion       
     }
