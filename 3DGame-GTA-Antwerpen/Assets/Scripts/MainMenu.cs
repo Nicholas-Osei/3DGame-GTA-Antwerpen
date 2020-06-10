@@ -13,7 +13,8 @@ public class MainMenu : MonoBehaviour {
 
 	void Start()
 	{
-		pauseMenuUi.SetActive(false);
+        if(pauseMenuUi != null)
+		    pauseMenuUi.SetActive(false);
 	}
 
 	public void Update()
