@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public Transform Player;
     private Rigidbody rigidbody;
     public float Kick;
-    public float speed = 4f;
+    public static float speed = 4f;
     public float Position;
     private bool death = false;
 
@@ -36,32 +36,32 @@ public class Enemy : MonoBehaviour
         Vector3 position = Vector3.MoveTowards(transform.position, Player.position, speed * Time.fixedDeltaTime);
         Vector3 Direction = transform.position;
 
-        float close = (transform.position - Player.position).sqrMagnitude;
+            float close = (transform.position - Player.position).sqrMagnitude;
 
 
-        if (close <= 5)
-        {
-            Debug.Log("i am close");
-            //animator.SetBool("IsKicking", true);
-            animator.SetBool("IsPunching", true);
+            if (close <= 5)
+            {
+                Debug.Log("i am close");
+                //animator.SetBool("IsKicking", true);
+                animator.SetBool("IsPunching", true);
 
-        }
-        else
-        {
-            animator.SetBool("IsPunching", false);
-        }
-        if (animator.GetBool("IsPunching") == true)
-        {
-            TakeDamage(0.1f);
-            Debug.Log("Take damage");
+            }
+            else
+            {
+                animator.SetBool("IsPunching", false);
+            }
+            if (animator.GetBool("IsPunching") == true)
+            {
+                TakeDamage(0.1f);
+                Debug.Log("Take damage");
 
-        }
+            }
 
 
-        animator.SetBool("IsWalking", true);
-
-        rigidbody.MovePosition(position);
-        transform.LookAt(Player);
+            animator.SetBool("IsWalking", true);
+            
+            rigidbody.MovePosition(position);
+            transform.LookAt(Player);
         }
     }
 
