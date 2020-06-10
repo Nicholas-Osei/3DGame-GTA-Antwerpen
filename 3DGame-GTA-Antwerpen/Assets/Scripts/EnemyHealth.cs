@@ -37,9 +37,9 @@ public class EnemyHealth : MonoBehaviour
         ScoreScript.scoreValue++;
         Timer.killNr++;
         Animatie();
-        yield return new WaitForSeconds(3.5f);
-        gameObject.SetActive(false);
-
+        yield return new WaitForSeconds(5.5f);
+        //gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     public void Animatie()

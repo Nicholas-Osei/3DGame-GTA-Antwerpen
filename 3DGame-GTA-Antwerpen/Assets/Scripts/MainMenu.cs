@@ -22,7 +22,8 @@ public class MainMenu : MonoBehaviour {
 			{
 				if (Paused)
 				{
-					Resume();
+                    Cursor.lockState = CursorLockMode.None;
+                    Resume();
 				}
 				else
 				{

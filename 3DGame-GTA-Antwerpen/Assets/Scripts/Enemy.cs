@@ -75,5 +75,6 @@ public class Enemy : MonoBehaviour
     {
         death = true;
         animator.SetBool("Death", true);
+        
     }
 }
