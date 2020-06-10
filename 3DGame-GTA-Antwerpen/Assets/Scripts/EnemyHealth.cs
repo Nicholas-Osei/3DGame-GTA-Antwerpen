@@ -33,5 +33,6 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         gameObject.SetActive(false);
+        ScoreScript.scoreValue++;
     }
 }

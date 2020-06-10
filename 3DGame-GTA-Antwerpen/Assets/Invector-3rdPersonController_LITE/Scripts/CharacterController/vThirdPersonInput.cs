@@ -45,10 +45,6 @@ namespace Invector.vCharacterController
         {
             InputHandle();                  // update the input methods
             cc.UpdateAnimator();            // updates the Animator Parameters
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                ScoreScript.scoreValue++;
-            }
         }
 
         public virtual void OnAnimatorMove()
