@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeroHealth : MonoBehaviour
 {
@@ -10,16 +11,18 @@ public class HeroHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentHealth = startHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentHealth <= 0)
+            Death();
     }
     private void OnEnable()
     {
-        currentHealth = startHealth;
+        
         healthBar.SetMaxHealth(startHealth);
     }
 
@@ -28,4 +31,11 @@ public class HeroHealth : MonoBehaviour
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
     }
+
+    public void Death()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
 }
