@@ -5,6 +5,8 @@ using UnityEngine;
 public class HealthPickUp : MonoBehaviour
 {
     HeroHealth heroHealth;
+    public HealthBar healthbar;
+
     public float healthBonus = 100f;
     public void Awake()
     {
@@ -16,6 +18,7 @@ public class HealthPickUp : MonoBehaviour
         {
             Destroy(gameObject);
             heroHealth.currentHealth = heroHealth.currentHealth + healthBonus;
+            healthbar.SetHealth(heroHealth.currentHealth);
         }
     }
 }
